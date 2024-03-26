@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Kanit;
+        }
+body{
+    background-image: url(./img/realistic-style-technology-particle-background_23-2148426704.avif);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box{
+    height: 400px;
+    width: 350px;
+    background-color: rgba(36, 26, 26, 0.856);
+}
+.frm{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap: 10px;
+    
+}
+.btn{
+    margin: 10px;
+    padding: 10px;
+
+}
+h1{
+    text-align: center;
+    color: gray;
+}
+.logo{
+    height: 100px;
+    position:relative;
+    left: 90px;
+}
+input{
+    width: 250px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 6px;
+}
+label{
+    color: gray;
+    position: relative;
+    right: 80px;
+}
+.btn{
+    border: 2px solid white;
+    border-radius: 6px;
+}
+.btn:hover{
+    background-image: linear-gradient(red,yellow,deeppink,blue);
+    transition:0.10ms;    
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size:larger;
+}
+    </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Welcome</h1>
+    <img class="logo" src="./img/spoon-and-fork-restaurant-logo.webp" alt="">
+    <form class="frm">
+        <label>User Name</label>
+        <input  class="name" type="text" required="required">
+        <label>Password</label>
+       <input class="psw" type="password" required="required"> 
+       <button class="btn"><a href=""> Log In</a></button>
+    </form>
+  </div>
+  <script>
+    let btn = document.querySelector(".btn")
+    btn.onclick = (e)=>{
+        e.preventDefault()
+        let name = document.querySelector(".name")[0]
+        let password = document.querySelector(".psw")[1]
+
+        let data = {
+            name : name,
+            password : password
+        }
+        sessionStorage.setItem('data',JSON.stringify(data))
+    }
+  </script>
+</body>
+</html>
